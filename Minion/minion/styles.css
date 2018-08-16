@@ -1,0 +1,128 @@
+body {
+    background-image: url("assets/images/minion/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    /* color: white; */
+}
+
+/* card styles */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100vw;
+  justify-content: center;
+}
+
+.card {
+  margin: 10px;
+  position: relative;
+  width: 25vh;
+  height: 25vh;
+}
+
+.card .face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; /* for safari */
+  transition: transform 0.3s;
+}
+
+/* nothing to put here */
+/*.card .face.cover {
+}*/
+
+.card .face.value {
+  transform: rotateY(-180deg);
+}
+
+.card.flipped .face.cover {
+  transform: rotateY(-180deg);
+}
+
+.card.card.flipped .face.value {
+  transform: rotateY(0deg);
+}
+
+.card .face img {
+  width: 25vh;
+  height: 25vh;
+  border-radius: 6px;
+}
+
+/* top bar and message styles  */
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #173e56;
+  color: white;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+}
+
+.top-bar .right button {
+  background: white;
+  border: none;
+  padding: 5px 20px;
+}
+
+.top-message {
+  margin-bottom: 15px;
+}
+
+.top-message p {
+  text-align: center;
+  padding: 5px;
+}
+
+/* pop-up-modal */
+.pop-up-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pop-up-modal .message {
+  border: 5px dashed white;
+  background: #173e56;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  margin: 10px;
+}
+
+.pop-up-modal .message p {
+  padding: 5px;
+}
+
+.pop-up-modal button {
+  background: white;
+  border: none;
+  padding: 5px 20px;
+}
+
+/* small device styles, smaller than ipad */
+@media (max-width: 768px) {
+  .card {
+    margin: 2px;
+    position: relative;
+    width: 25vw;
+    height: 25vw;
+  }
+
+  .card .face img {
+    width: 25vw;
+    height: 25vw;
+    border-radius: 6px;
+  }
+}
